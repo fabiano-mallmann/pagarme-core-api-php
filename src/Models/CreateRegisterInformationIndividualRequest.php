@@ -72,7 +72,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
         array $phoneNumbers,
         string $name,
         string $birthdate,
-        int $monthlyIncome,
+        string $monthlyIncome,
         string $professionalOccupation,
         CreateRegisterInformationAddressRequest $address
     ) {

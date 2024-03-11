@@ -18,58 +18,58 @@ class CreateRecipientRequest implements JsonSerializable
      * Default Bank Account
      * @required
      * @maps default_bank_account
-     * @var string $defaultBankAccount public property
+     * @var array $defaultBankAccount public property
      */
-    private $defaultBankAccount;
+    public $defaultBankAccount;
     /**
      * Transfer Settings
      * @required
      * @maps transfer_settings
-     * @var string $transferSettings public property
+     * @var CreateTransferSettingsRequest $transferSettings public property
      */
-    private $transferSettings;
+    public $transferSettings;
 
     /**
      * Automatic Anticipation Settings
      * @required
      * @maps automatic_anticipation_settings
-     * @var string $automaticAnticipationSettings public property
+     * @var array|null|mixed $automaticAnticipationSettings public property
      */
-    private $automaticAnticipationSettings;
+    public $automaticAnticipationSettings;
     /**
      * Register Information
      * @required
      * @maps register_information
      * @var CreateRegisterInformationBaseRequest
      */
-    private $registerInformation;
+    public $registerInformation;
     /**
      * Code
      * @required
      * @maps code
      * @var string $code public property
      */
-    private $code;
+    public $code;
 
 
     /**
      * @param CreateBankAccountRequest $defaultBankAccount
-     * @param array $transferSettings
-     * @param array $automaticAnticipationSettings
+     * @param CreateTransferSettingsRequest $transferSettings
+     * @param array|null|mixed $automaticAnticipationSettings
      * @param CreateRegisterInformationBaseRequest $registerInformation
      * @param string $code
      */
     public function __construct(
         CreateBankAccountRequest $defaultBankAccount,
-        array $transferSettings,
-        array $automaticAnticipationSettings,
+        CreateTransferSettingsRequest $transferSettings,
+        mixed $automaticAnticipationSettings,
         CreateRegisterInformationBaseRequest $registerInformation,
         string $code
     ) {
 
         $this->defaultBankAccount = $defaultBankAccount;
         $this->transferSettings = $transferSettings;
-        $this->transferSettings = $automaticAnticipationSettings;
+        $this->automaticAnticipationSettings = $automaticAnticipationSettings;
         $this->registerInformation = $registerInformation;
         $this->code = $code;
     }
