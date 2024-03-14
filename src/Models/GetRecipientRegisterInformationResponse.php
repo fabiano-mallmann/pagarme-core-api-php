@@ -236,10 +236,10 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
         $json['main_address']               = $this->mainAddress;
         $json['managing_partners']          = $this->managingPartners;
         $json['name']                       = $this->name;
-        $json['motherName']                 = $this->motherName;
+        $json['mother_name']                 = $this->motherName;
         $json['birthdate']                  = $this->birthdate;
-        $json['monthlyIncome']              = $this->monthlyIncome;
-        $json['professionalOccupation']     = $this->professionalOccupation;
+        $json['monthly_income']              = $this->monthlyIncome;
+        $json['professional_occupation']     = $this->professionalOccupation;
         $json['address']                    = $this->address;
 
         return $json;
