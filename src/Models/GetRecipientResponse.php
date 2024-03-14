@@ -129,6 +129,12 @@ class GetRecipientResponse implements JsonSerializable
     public $transferSettings;
 
     /**
+     * @maps register_information
+     * @var \PagarmeCoreApiLib\Models\GetRecipientRegisterInformationResponse $registerInformation public property
+     */
+    public $registerInformation;
+
+    /**
      * Recipient code
      * @required
      * @var string $code public property
@@ -196,6 +202,22 @@ class GetRecipientResponse implements JsonSerializable
                 $this->code                          = func_get_arg(15);
                 $this->paymentMode                   = func_get_arg(16);
                 break;
+            case 15:
+                $this->id                               = func_get_arg(0);
+                $this->name                             = func_get_arg(1);
+                $this->email                            = func_get_arg(2);
+                $this->code                             = func_get_arg(3);
+                $this->document                         = func_get_arg(4);
+                $this->type                             = func_get_arg(5);
+                $this->paymentMode                      = func_get_arg(6);
+                $this->status                           = func_get_arg(7);
+                $this->createdAt                        = func_get_arg(8);
+                $this->updatedAt                        = func_get_arg(9);
+                $this->transferSettings                 = func_get_arg(10);
+                $this->defaultBankAccount               = func_get_arg(11);
+                $this->gatewayRecipients                = func_get_arg(12);
+                $this->automaticAnticipationSettings    = func_get_arg(13);
+                $this->registerInformation              = func_get_arg(14);
 
             default:
                 $this->paymentMode = 'bank_transfer';
@@ -227,6 +249,7 @@ class GetRecipientResponse implements JsonSerializable
         $json['automatic_anticipation_settings'] = $this->automaticAnticipationSettings;
         $json['transfer_settings']               = $this->transferSettings;
         $json['code']                            = $this->code;
+        $json['register_information']            = $this->registerInformation;
         $json['payment_mode']                    = $this->paymentMode;
 
         return $json;

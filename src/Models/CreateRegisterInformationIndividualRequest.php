@@ -58,6 +58,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @param string $email
      * @param string $document
      * @param string $type
+     * @param string $siteUrl
      * @param CreateRegisterInformationPhoneRequest[] $phoneNumbers
      * @param string $name
      * @param string $birthdate
@@ -69,15 +70,18 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
         string $email,
         string $document,
         string $type,
+        string $siteUrl,
         array $phoneNumbers,
         string $name,
+        string $motherName,
         string $birthdate,
         string $monthlyIncome,
         string $professionalOccupation,
         CreateRegisterInformationAddressRequest $address
     ) {
-        parent::__construct($email, $document, $type, $phoneNumbers);
+        parent::__construct($email, $document, $type, $siteUrl, $phoneNumbers);
         $this->name = $name;
+        $this->motherName = $motherName;
         $this->birthdate = $birthdate;
         $this->monthlyIncome = $monthlyIncome;
         $this->professionalOccupation = $professionalOccupation;

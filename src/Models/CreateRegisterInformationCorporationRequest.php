@@ -74,6 +74,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @param string $email
      * @param string $document
      * @param string $type
+     * @param string $siteUrl
      * @param CreateRegisterInformationPhoneRequest[] $phoneNumbers
      * @param string $companyName
      * @param string $corporationType
@@ -88,6 +89,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
         string $email,
         string $document,
         string $type,
+        string $siteUrl,
         array $phoneNumbers,
         string $companyName,
         string $corporationType,
@@ -98,7 +100,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
         array $managingPartners,
         CreateRegisterInformationAddressRequest $mainAddress
     ) {
-        parent::__construct($email, $document, $type, $phoneNumbers);
+        parent::__construct($email, $document, $type, $siteUrl, $phoneNumbers);
         $this->companyName = $companyName;
         $this->corporationType = $corporationType;
         $this->tradingName = $tradingName;

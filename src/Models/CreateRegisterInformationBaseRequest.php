@@ -56,11 +56,13 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
         string $email,
         string $document,
         string $type,
+        string $siteUrl,
         array $phoneNumbers
     ) {
         $this->email = $email;
         $this->document = $document;
         $this->type = $type;
+        $this->siteUrl = $siteUrl;
         $this->phoneNumbers = $phoneNumbers;
     }
 
@@ -76,7 +78,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
         $json['email']         = $this->email;
         $json['document']      = $this->document;
         $json['type']          = $this->type;
-        $json['site_url']  = $this->siteUrl;
+        $json['site_url']       = $this->siteUrl;
         $json['phone_numbers'] = $this->phoneNumbers;
 
         return $json;
