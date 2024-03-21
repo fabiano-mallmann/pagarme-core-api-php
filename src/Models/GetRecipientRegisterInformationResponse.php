@@ -57,14 +57,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
     public $foundingDate;
 
     /**
-     * CNAE
-     * @required
-     * @maps cnae
-     * @var string $cnae public property
-     */
-    public $cnae;
-
-    /**
      * Main Address
      * @required
      * @maps main_address
@@ -193,7 +185,7 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
                 $this->address                  = func_get_arg(10);
                 break;
 
-            case 13:
+            case 12:
                 $this->email                    = func_get_arg(0);
                 $this->document                 = func_get_arg(1);
                 $this->type                     = func_get_arg(2);
@@ -204,7 +196,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
                 $this->annualRevenue            = func_get_arg(7);
                 $this->corporationType          = func_get_arg(8);
                 $this->foundingDate             = func_get_arg(9);
-                $this->cnae                     = func_get_arg(11);
                 $this->mainAddress              = func_get_arg(12);
                 $this->managingPartners         = func_get_arg(13);
                 break;
@@ -232,7 +223,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
         $json['annual_revenue']             = $this->annualRevenue;
         $json['corporation_type']           = $this->corporationType;
         $json['founding_date']              = $this->foundingDate;
-        $json['cnae']                       = $this->cnae;
         $json['main_address']               = $this->mainAddress;
         $json['managing_partners']          = $this->managingPartners;
         $json['name']                       = $this->name;

@@ -34,7 +34,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * Site Url
      * @required
      * @maps site_url
-     * @var string $siteUrl public property
+     * @var string|null $siteUrl public property
      */
     private $siteUrl;
 
@@ -53,11 +53,11 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * @param CreateRegisterInformationPhoneRequest[] $phoneNumbers
      */
     public function __construct(
-        string $email,
-        string $document,
-        string $type,
-        string $siteUrl,
-        array $phoneNumbers
+        $email,
+        $document,
+        $type,
+        $siteUrl,
+        $phoneNumbers
     ) {
         $this->email = $email;
         $this->document = $document;

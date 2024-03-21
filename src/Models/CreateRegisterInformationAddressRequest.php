@@ -78,14 +78,14 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @param string $referencePoint
      */
     public function __construct(
-        string $street,
-        string $complementary,
-        string $streetNumber,
-        string $neighborhood,
-        string $city,
-        string $state,
-        string $zipCode,
-        string $referencePoint
+        $street,
+        $complementary,
+        $streetNumber,
+        $neighborhood,
+        $city,
+        $state,
+        $zipCode,
+        $referencePoint
     ) {
         $this->street = $street;
         $this->complementary = $complementary;

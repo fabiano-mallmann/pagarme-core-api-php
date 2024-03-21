@@ -35,7 +35,7 @@ class CreateRegisterInformationPhoneRequest implements \JsonSerializable
      * @param string $number
      * @param string $type
      */
-    public function __construct(string $ddd, string $number, string $type)
+    public function __construct($ddd, $number, $type)
     {
         $this->ddd = $ddd;
         $this->number = $number;

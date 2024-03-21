@@ -54,25 +54,25 @@ class CreateRecipientRequest implements JsonSerializable
 
     /**
      * @param CreateBankAccountRequest $defaultBankAccount
-     * @param CreateTransferSettingsRequest $transferSettings
+     * @param null|CreateTransferSettingsRequest $transferSettings
      * @param array|null|mixed $automaticAnticipationSettings
      * @param CreateRegisterInformationBaseRequest $registerInformation
      * @param string $code
      */
     public function __construct(
         CreateBankAccountRequest $defaultBankAccount,
-        CreateTransferSettingsRequest $transferSettings,
-        mixed $automaticAnticipationSettings,
+        $transferSettings,
+        $automaticAnticipationSettings,
         CreateRegisterInformationBaseRequest $registerInformation,
-        string $code
+        $code
     ) {
-
         $this->defaultBankAccount = $defaultBankAccount;
         $this->transferSettings = $transferSettings;
         $this->automaticAnticipationSettings = $automaticAnticipationSettings;
         $this->registerInformation = $registerInformation;
         $this->code = $code;
     }
+    
     /**
      * Encode this object to JSON
      * @return array

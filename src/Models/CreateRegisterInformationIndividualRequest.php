@@ -67,16 +67,16 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @param CreateRegisterInformationAddressRequest $address
      */
     public function __construct(
-        string $email,
-        string $document,
-        string $type,
-        string $siteUrl,
-        array $phoneNumbers,
-        string $name,
-        string $motherName,
-        string $birthdate,
-        string $monthlyIncome,
-        string $professionalOccupation,
+        $email,
+        $document,
+        $type,
+        $siteUrl,
+        $phoneNumbers,
+        $name,
+        $motherName,
+        $birthdate,
+        $monthlyIncome,
+        $professionalOccupation,
         CreateRegisterInformationAddressRequest $address
     ) {
         parent::__construct($email, $document, $type, $siteUrl, $phoneNumbers);

@@ -47,14 +47,6 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
     private $foundingDate;
 
     /**
-     * Cnae
-     * @required
-     * @maps cnae
-     * @var string $cnae public property
-     */
-    private $cnae;
-
-    /**
      * Managing Partners
      * @required
      * @maps managing_partners
@@ -80,24 +72,22 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @param string $corporationType
      * @param string $tradingName
      * @param int $annualRevenue
-     * @param string $cnae
      * @param string $foundingDate
      * @param CreateManagingPartnerRequest[] $managingPartners
      * @param CreateRegisterInformationAddressRequest $mainAddress
      */
     public function __construct(
-        string $email,
-        string $document,
-        string $type,
-        string $siteUrl,
-        array $phoneNumbers,
-        string $companyName,
-        string $corporationType,
-        string $tradingName,
-        int $annualRevenue,
-        string $cnae,
-        string $foundingDate,
-        array $managingPartners,
+        $email,
+        $document,
+        $type,
+        $siteUrl,
+        $phoneNumbers,
+        $companyName,
+        $corporationType,
+        $tradingName,
+        $annualRevenue,
+        $foundingDate,
+        $managingPartners,
         CreateRegisterInformationAddressRequest $mainAddress
     ) {
         parent::__construct($email, $document, $type, $siteUrl, $phoneNumbers);
@@ -105,7 +95,6 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
         $this->corporationType = $corporationType;
         $this->tradingName = $tradingName;
         $this->annualRevenue = $annualRevenue;
-        $this->cnae = $cnae;
         $this->foundingDate = $foundingDate;
         $this->managingPartners = $managingPartners;
         $this->mainAddress = $mainAddress;
@@ -128,7 +117,6 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
         $json['annual_revenue']       = $this->annualRevenue;
         $json['corporation_type']     = $this->corporationType;
         $json['founding_date']        = $this->foundingDate;
-        $json['cnae']                 = $this->cnae;
         $json['founding_date']        = $this->foundingDate;
         $json['managing_partners']    = $this->managingPartners;
         $json['main_address']         = $this->mainAddress;
