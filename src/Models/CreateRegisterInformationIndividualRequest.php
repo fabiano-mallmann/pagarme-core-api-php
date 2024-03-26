@@ -12,15 +12,14 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @maps name
      * @var string $name public property
      */
-    private $name;
+    public $name;
 
     /**
      * Mother Name
-     * @required
      * @maps mother_name
      * @var string $motherName public property
      */
-    private $motherName;
+    public $motherName;
 
     /**
      * Birthdate
@@ -28,7 +27,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @maps birthdate
      * @var string $birthdate public property
      */
-    private $birthdate;
+    public $birthdate;
 
     /**
      * Monthly Income
@@ -36,7 +35,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @maps monthly_income
      * @var int $monthlyIncome public property
      */
-    private $monthlyIncome;
+    public $monthlyIncome;
 
     /**
      * Professional Occupation
@@ -44,7 +43,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @maps professional_occupation
      * @var string $professionalOccupation public property
      */
-    private $professionalOccupation;
+    public $professionalOccupation;
 
     /**
      * Address
@@ -52,7 +51,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @maps address
      * @var CreateRegisterInformationAddressRequest $address public property
      */
-    private $address;
+    public $address;
 
     /**
      * @param string $email
@@ -61,6 +60,7 @@ class CreateRegisterInformationIndividualRequest extends CreateRegisterInformati
      * @param string $siteUrl
      * @param CreateRegisterInformationPhoneRequest[] $phoneNumbers
      * @param string $name
+     * @param string|null $motherName
      * @param string $birthdate
      * @param int $monthlyIncome
      * @param string $professionalOccupation

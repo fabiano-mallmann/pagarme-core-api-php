@@ -12,7 +12,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @maps company_name
      * @var string $companyName public property
      */
-    private $companyName;
+    public $companyName;
 
     /**
      * Trading Name
@@ -20,7 +20,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @maps trading_name
      * @var string $tradingName public property
      */
-    private $tradingName;
+    public $tradingName;
 
     /**
      * Annual Revenue
@@ -28,23 +28,21 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @maps annual_revenue
      * @var string $annualRevenue public property
      */
-    private $annualRevenue;
+    public $annualRevenue;
 
     /**
      * Corporation Type
-     * @required
      * @maps corporation_type
      * @var string $corporationType public property
      */
-    private $corporationType;
+    public $corporationType;
 
     /**
      * Founding Date
-     * @required
      * @maps founding_date
      * @var string $foundingDate public property
      */
-    private $foundingDate;
+    public $foundingDate;
 
     /**
      * Managing Partners
@@ -52,7 +50,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @maps managing_partners
      * @var CreateManagingPartnerRequest[] $managingPartners public property
      */
-    private $managingPartners;
+    public $managingPartners;
 
     /**
      * Main Address
@@ -60,7 +58,7 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
      * @maps main_address
      * @var CreateRegisterInformationAddressRequest[] $mainAddress public property
      */
-    private $mainAddress;
+    public $mainAddress;
 
     /**
      * @param string $email
@@ -113,10 +111,9 @@ class CreateRegisterInformationCorporationRequest extends CreateRegisterInformat
     {
         $json = [];
         $json['company_name']         = $this->companyName;
+        $json['corporation_type']     = $this->corporationType;
         $json['trading_name']         = $this->tradingName;
         $json['annual_revenue']       = $this->annualRevenue;
-        $json['corporation_type']     = $this->corporationType;
-        $json['founding_date']        = $this->foundingDate;
         $json['founding_date']        = $this->foundingDate;
         $json['managing_partners']    = $this->managingPartners;
         $json['main_address']         = $this->mainAddress;

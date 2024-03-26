@@ -12,7 +12,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * @maps email
      * @var string $email public property
      */
-    private $email;
+    public $email;
 
     /**
      * Document
@@ -20,7 +20,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * @maps document
      * @var string $document public property
      */
-    private $document;
+    public $document;
 
     /**
      * Type
@@ -28,7 +28,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * @maps type
      * @var string $type public property
      */
-    private $type;
+    public $type;
 
     /**
      * Site Url
@@ -36,7 +36,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * @maps site_url
      * @var string|null $siteUrl public property
      */
-    private $siteUrl;
+    public $siteUrl;
 
     /**
      * Phone Numbers
@@ -44,12 +44,13 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
      * @maps phone_numbers
      * @var CreateRegisterInformationPhoneRequest $phoneNumbers public property
      */
-    private $phoneNumbers;
+    public $phoneNumbers;
 
     /**
      * @param string $email
      * @param string $document
      * @param string $type
+     * @param string|null $siteUrl
      * @param CreateRegisterInformationPhoneRequest[] $phoneNumbers
      */
     public function __construct(
@@ -78,7 +79,7 @@ class CreateRegisterInformationBaseRequest implements JsonSerializable
         $json['email']         = $this->email;
         $json['document']      = $this->document;
         $json['type']          = $this->type;
-        $json['site_url']       = $this->siteUrl;
+        $json['site_url']      = $this->siteUrl;
         $json['phone_numbers'] = $this->phoneNumbers;
 
         return $json;

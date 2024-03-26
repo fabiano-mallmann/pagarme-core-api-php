@@ -36,7 +36,7 @@ class GetRecipientPhonesResponse implements JsonSerializable
      * @var string $type public property
      */
     public $type;
-    
+
 
     /**
      * Constructor to set initial or default values of member properties
@@ -44,12 +44,10 @@ class GetRecipientPhonesResponse implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 3:
-                $this->ddd       = func_get_arg(0);
-                $this->number    = func_get_arg(1);
-                $this->type      = func_get_arg(2);
-                break;
+        if (func_num_args() === 3) {
+            $this->ddd       = func_get_arg(0);
+            $this->number    = func_get_arg(1);
+            $this->type      = func_get_arg(2);
         }
     }
 

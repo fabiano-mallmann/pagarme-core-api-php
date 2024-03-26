@@ -79,17 +79,15 @@ class GetRecipientAddressResponse implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 8:
-                $this->street           = func_get_arg(0);
-                $this->complementary    = func_get_arg(1);
-                $this->streetNumber    = func_get_arg(2);
-                $this->neighborhood     = func_get_arg(3);
-                $this->city             = func_get_arg(4);
-                $this->state            = func_get_arg(5);
-                $this->zipCode         = func_get_arg(6);
-                $this->referencePoint  = func_get_arg(7);
-                break;
+        if (func_num_args() == 8) {
+            $this->street           = func_get_arg(0);
+            $this->complementary    = func_get_arg(1);
+            $this->streetNumber     = func_get_arg(2);
+            $this->neighborhood     = func_get_arg(3);
+            $this->city             = func_get_arg(4);
+            $this->state            = func_get_arg(5);
+            $this->zipCode          = func_get_arg(6);
+            $this->referencePoint   = func_get_arg(7);
         }
     }
 

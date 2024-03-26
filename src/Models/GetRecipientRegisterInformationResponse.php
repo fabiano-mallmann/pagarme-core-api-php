@@ -42,7 +42,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
 
     /**
      * Corporation Type
-     * @required
      * @maps corporation_type
      * @var string $corporationType public property
      */
@@ -50,7 +49,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
 
     /**
      * Founding Date
-     * @required
      * @maps founding_date
      * @var string $foundingDate public property
      */
@@ -106,7 +104,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
 
     /**
      * Mother Name
-     * @required
      * @maps mother_name
      * @var string $motherName public property
      */
@@ -146,7 +143,6 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
 
     /**
      * Site Url
-     * @required
      * @maps site_url
      * @var string $siteUrl public property
      */
@@ -196,8 +192,8 @@ class GetRecipientRegisterInformationResponse implements JsonSerializable
                 $this->annualRevenue            = func_get_arg(7);
                 $this->corporationType          = func_get_arg(8);
                 $this->foundingDate             = func_get_arg(9);
-                $this->mainAddress              = func_get_arg(12);
-                $this->managingPartners         = func_get_arg(13);
+                $this->mainAddress              = func_get_arg(10);
+                $this->managingPartners         = func_get_arg(11);
                 break;
 
             default:

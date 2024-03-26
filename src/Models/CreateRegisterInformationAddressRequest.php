@@ -12,7 +12,7 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps street
      * @var string $street public property
      */
-    private $street;
+    public $street;
 
     /**
      * Complementary
@@ -20,7 +20,7 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps complementary
      * @var string $complementary public property
      */
-    private $complementary;
+    public $complementary;
 
     /**
      * Street Number
@@ -28,7 +28,7 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps street_number
      * @var string $streetNumber public property
      */
-    private $streetNumber;
+    public $streetNumber;
 
     /**
      * Neighborhood
@@ -36,7 +36,7 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps neighborhood
      * @var string $neighborhood public property
      */
-    private $neighborhood;
+    public $neighborhood;
 
     /**
      * City
@@ -44,7 +44,7 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps city
      * @var string $city public property
      */
-    private $city;
+    public $city;
 
     /**
      * State
@@ -52,12 +52,12 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps state
      * @var string $state public property
      */
-    private $state;
+    public $state;
 
     /**
      * @var string
      */
-    private $zipCode;
+    public $zipCode;
 
     /**
      * Reference Point
@@ -65,7 +65,7 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
      * @maps reference_point
      * @var string $referencePoint public property
      */
-    private $referencePoint;
+    public $referencePoint;
 
     /**
      * @param string $street
@@ -87,14 +87,14 @@ class CreateRegisterInformationAddressRequest implements JsonSerializable
         $zipCode,
         $referencePoint
     ) {
-        $this->street = $street;
-        $this->complementary = $complementary;
-        $this->streetNumber = $streetNumber;
-        $this->neighborhood = $neighborhood;
-        $this->city = $city;
-        $this->state = $state;
-        $this->zipCode = $zipCode;
-        $this->referencePoint = $referencePoint;
+        $this->street           = $street;
+        $this->complementary    = $complementary;
+        $this->streetNumber     = $streetNumber;
+        $this->neighborhood     = $neighborhood;
+        $this->city             = $city;
+        $this->state            = $state;
+        $this->zipCode          = $zipCode;
+        $this->referencePoint   = $referencePoint;
     }
 
 

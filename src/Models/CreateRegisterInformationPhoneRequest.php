@@ -12,7 +12,7 @@ class CreateRegisterInformationPhoneRequest implements \JsonSerializable
      * @maps ddd
      * @var string $ddd public property
      */
-    private $ddd;
+    public $ddd;
 
     /**
      * Number
@@ -20,7 +20,7 @@ class CreateRegisterInformationPhoneRequest implements \JsonSerializable
      * @maps number
      * @var string $number public property
      */
-    private $number;
+    public $number;
 
     /**
      * Type
@@ -28,7 +28,7 @@ class CreateRegisterInformationPhoneRequest implements \JsonSerializable
      * @maps type
      * @var string $type public property
      */
-    private $type;
+    public $type;
 
     /**
      * @param string $ddd

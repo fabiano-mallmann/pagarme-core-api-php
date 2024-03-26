@@ -106,24 +106,32 @@ class GetRecipientManagingPartnersResponse implements JsonSerializable
 
     /**
      * Constructor to set initial or default values of member properties
-     
+     * @param string $name
+     * @param string $email
+     * @param string $document
+     * @param string $type
+     * @param string|null $motherName
+     * @param string $birthdate
+     * @param int $monthlyIncome
+     * @param string $professionalOccupation
+     * @param bool $selfDeclaredRepresentative
+     * @param CreateRegisterInformationAddressRequest $address
+     * @param CreateRegisterInformationPhoneRequest[] $phoneNumbers
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 11:
-                $this->name                         = func_get_arg(0);
-                $this->email                        = func_get_arg(1);
-                $this->document                     = func_get_arg(2);
-                $this->type                         = func_get_arg(3);
-                $this->motherName                   = func_get_arg(4);
-                $this->birthdate                    = func_get_arg(5);
-                $this->monthlyIncome                = func_get_arg(6);
-                $this->professionalOccupation       = func_get_arg(7);
-                $this->selfDeclaredRepresentative   = func_get_arg(8);
-                $this->address                      = func_get_arg(9);
-                $this->phoneNumbers                 = func_get_arg(10);
-                break;
+        if (func_num_args() === 11) {
+            $this->name                         = func_get_arg(0);
+            $this->email                        = func_get_arg(1);
+            $this->document                     = func_get_arg(2);
+            $this->type                         = func_get_arg(3);
+            $this->motherName                   = func_get_arg(4);
+            $this->birthdate                    = func_get_arg(5);
+            $this->monthlyIncome                = func_get_arg(6);
+            $this->professionalOccupation       = func_get_arg(7);
+            $this->selfDeclaredRepresentative   = func_get_arg(8);
+            $this->address                      = func_get_arg(9);
+            $this->phoneNumbers                 = func_get_arg(10);
         }
     }
 
