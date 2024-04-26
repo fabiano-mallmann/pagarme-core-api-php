@@ -65,6 +65,13 @@ class GetRecipientResponse implements JsonSerializable
     public $status;
 
     /**
+     * KYC Details
+     * @required
+     * @var \PagarmeCoreApiLib\Models\GetRecipientKycDetailsResponse|null $kyc_details public property
+     */
+    public $kyc_details;
+
+    /**
      * Creation date
      * @required
      * @maps created_at
@@ -160,6 +167,8 @@ class GetRecipientResponse implements JsonSerializable
      *                                                                           >description
      * @param string                            $type                          Initialization value for $this->type
      * @param string                            $status                        Initialization value for $this->status
+     * @param GetRecipientKycDetailsResponse    $kyc_details                   Initialization value for $this-
+     *                                                                           >kyc_details
      * @param \DateTime                         $createdAt                     Initialization value for $this-
      *                                                                           >createdAt
      * @param \DateTime                         $updatedAt                     Initialization value for $this-
@@ -183,7 +192,7 @@ class GetRecipientResponse implements JsonSerializable
     public function __construct()
     {
         switch (func_num_args()) {
-            case 17:
+            case 18:
                 $this->id                            = func_get_arg(0);
                 $this->name                          = func_get_arg(1);
                 $this->email                         = func_get_arg(2);
@@ -191,18 +200,19 @@ class GetRecipientResponse implements JsonSerializable
                 $this->description                   = func_get_arg(4);
                 $this->type                          = func_get_arg(5);
                 $this->status                        = func_get_arg(6);
-                $this->createdAt                     = func_get_arg(7);
-                $this->updatedAt                     = func_get_arg(8);
-                $this->deletedAt                     = func_get_arg(9);
-                $this->defaultBankAccount            = func_get_arg(10);
-                $this->gatewayRecipients             = func_get_arg(11);
-                $this->metadata                      = func_get_arg(12);
-                $this->automaticAnticipationSettings = func_get_arg(13);
-                $this->transferSettings              = func_get_arg(14);
-                $this->code                          = func_get_arg(15);
-                $this->paymentMode                   = func_get_arg(16);
+                $this->kyc_details                   = func_get_arg(7);
+                $this->createdAt                     = func_get_arg(8);
+                $this->updatedAt                     = func_get_arg(9);
+                $this->deletedAt                     = func_get_arg(10);
+                $this->defaultBankAccount            = func_get_arg(11);
+                $this->gatewayRecipients             = func_get_arg(12);
+                $this->metadata                      = func_get_arg(13);
+                $this->automaticAnticipationSettings = func_get_arg(14);
+                $this->transferSettings              = func_get_arg(15);
+                $this->code                          = func_get_arg(16);
+                $this->paymentMode                   = func_get_arg(17);
                 break;
-            case 15:
+            case 16:
                 $this->id                               = func_get_arg(0);
                 $this->name                             = func_get_arg(1);
                 $this->email                            = func_get_arg(2);
@@ -211,13 +221,14 @@ class GetRecipientResponse implements JsonSerializable
                 $this->type                             = func_get_arg(5);
                 $this->paymentMode                      = func_get_arg(6);
                 $this->status                           = func_get_arg(7);
-                $this->createdAt                        = func_get_arg(8);
-                $this->updatedAt                        = func_get_arg(9);
-                $this->transferSettings                 = func_get_arg(10);
-                $this->defaultBankAccount               = func_get_arg(11);
-                $this->gatewayRecipients                = func_get_arg(12);
-                $this->automaticAnticipationSettings    = func_get_arg(13);
-                $this->registerInformation              = func_get_arg(14);
+                $this->kyc_details                      = func_get_arg(8);
+                $this->createdAt                        = func_get_arg(9);
+                $this->updatedAt                        = func_get_arg(10);
+                $this->transferSettings                 = func_get_arg(11);
+                $this->defaultBankAccount               = func_get_arg(12);
+                $this->gatewayRecipients                = func_get_arg(13);
+                $this->automaticAnticipationSettings    = func_get_arg(14);
+                $this->registerInformation              = func_get_arg(15);
 
             default:
                 $this->paymentMode = 'bank_transfer';
@@ -240,6 +251,7 @@ class GetRecipientResponse implements JsonSerializable
         $json['description']                     = $this->description;
         $json['type']                            = $this->type;
         $json['status']                          = $this->status;
+        $json['kyc_details']                     = $this->kyc_details;
         $json['created_at']                      = DateTimeHelper::toRfc3339DateTime($this->createdAt);
         $json['updated_at']                      = DateTimeHelper::toRfc3339DateTime($this->updatedAt);
         $json['deleted_at']                      = DateTimeHelper::toRfc3339DateTime($this->deletedAt);
