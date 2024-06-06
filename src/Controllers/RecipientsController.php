@@ -1278,17 +1278,15 @@ class RecipientsController extends BaseController
     ) {
 
         //prepare query string for API call
-        //$_queryBuilder = '/recipients/{recipient_id}/kyc_link ';
-        $_queryBuilder = '/kycs-mock/qr-code';
+        $_queryBuilder = '/recipients/{recipient_id}/kyc_link ';
 
         //process optional query parameters
-        // $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
-        //     'recipient_id' => $recipientId,
-        // ));
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+            'recipient_id' => $recipientId,
+        ));
 
         //validate and preprocess url
-        //$_queryUrl = APIHelper::cleanUrl(Configuration::$BASEURI . $_queryBuilder);
-        $_queryUrl = APIHelper::cleanUrl('https://api.mundipagg.com/lifecycle/v1' . $_queryBuilder);
+        $_queryUrl = APIHelper::cleanUrl(Configuration::$BASEURI . $_queryBuilder);
 
         //prepare headers
         $_headers = array (
@@ -1297,7 +1295,7 @@ class RecipientsController extends BaseController
         );
 
         //set HTTP basic auth parameters
-        //Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
+        Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl);
